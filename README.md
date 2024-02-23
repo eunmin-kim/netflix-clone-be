@@ -5,7 +5,8 @@
 ### 사용 라이브러리
 * **Nest.js** 
 * **Passport.js**
-
+* **class-validator**
+* **class-transformer**
 
 ---
 본  Repository는 [Netflix Clone Coding - React Native](https://github.com/eunmin-kim/netflix-clone)에 백엔드입니다.
