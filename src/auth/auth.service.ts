@@ -1,7 +1,7 @@
 import { HttpException, Injectable } from '@nestjs/common';
 import { UsersService } from '../users/users.service';
 import { JwtService } from '@nestjs/jwt';
-import CreateUserDto from '../users/dto/createUser.dto';
+import CreateUserDto from '../users/dto/create-user.dto';
 import * as bcrypt from 'bcrypt';
 
 @Injectable()
@@ -22,10 +22,11 @@ export class AuthService {
   async login(user: any) {
     const payload = { email: user.email, sub: user.id };
     return {
-      result: {
+      tokens: {
         access_token: this.jwtService.sign(payload, { expiresIn: '60s' }),
         refresh_token: this.jwtService.sign(payload, { expiresIn: '1d' }),
       },
+      user,
     };
   }
 
